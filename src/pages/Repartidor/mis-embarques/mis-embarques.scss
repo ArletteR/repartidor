@@ -1,0 +1,68 @@
+page-mis-embarques {
+    .misEmbarquesEtiqueta {
+        font-size: 14px !important;
+        font-family: Ubuntu !important;
+        text-align: center;
+        color: #B9B9B9;
+        font-weight: bold;
+        border-bottom-color: #F3C24A;
+        box-shadow: inset 0 -2px 0 0 #F3C24A;
+        line-height: 3em;
+        transition: all 0.3s ease-in;
+        background: white;
+    }
+    .embarquesEtiqueta {
+        font-size: 14px !important;
+        text-align: center;
+        font-family: Ubuntu !important;
+        color: #B9B9B9;
+        border-bottom-color: #B9B9B9;
+        box-shadow: inset 0 -2px 0 0 #B9B9B9;
+        line-height: 3em;
+        background: white;
+    }
+    .noHayEmbarquesTexto {
+        font-size: 16px !important;
+        font-family: SourceSansPro-Regular !important;
+        color: #b9b9b9;
+        margin-left: 0.2cm;
+        line-height: 1.7em;
+        text-align: center;
+    }
+    .noEmbarques {
+        background: url(../assets/img/misembarques.png) no-repeat top center;
+        background-size: contain;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto 0 auto;
+    }
+    .botonFinalizar {
+        margin-top: 8px;
+        font-size: 14px !important;
+        text-align: right;
+        font-family: SourceSansPro-Regular !important;
+        color: #b4d14b;
+    }
+    .fondoInterfaz {
+        background: #fbfcfc;
+        background-color: #fbfcfc;
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+    .fondoTiempo {
+        background: #fbfcfc;
+        background-color: #fbfcfc;
+    }
+    .fondoTarjeta {
+        background: #ffffff;
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+    }
+    .mensajeatraso {
+        margin-top: 8px;
+        font-size: 14px !important;
+        font-family: SourceSansPro-Regular !important;
+        color: #f47b29;
+    }
+}

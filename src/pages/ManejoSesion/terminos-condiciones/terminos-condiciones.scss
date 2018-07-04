@@ -1,0 +1,43 @@
+page-terminos-condiciones {
+    .titulo {
+        font-size: 20px;
+        font-family: Ubuntu;
+        color: #76bd1d;
+    }
+    .marginTop {
+        margin-top: 60px;
+    }
+    .imagen {
+        margin-top: 25px;
+        display: block;
+        margin: auto auto;
+    }
+    .mensajeCorreo {
+        font-size: 18px;
+        font-family: SourceSansPro-Regular;
+        color: #999999;
+        margin-left: 0.2cm;
+        line-height: 1.7em;
+        text-align: center;
+    }
+    .formatoBoton {
+        font-family: Ubuntu;
+        color: #ffffff;
+        text-align: center;
+        font-size: 16px;
+        text-transform: none;
+        height: 48px;
+        width: 280px;
+    }
+    .formatoBoton2 {
+        font-family: Ubuntu;
+        color: #b4d049;
+        text-align: center;
+        font-size: 16px;
+        text-transform: none;
+        height: 48px;
+        width: 280px;
+        border-bottom-color: #b4d049;
+        box-shadow: solid 0 1px 0 0 #b4d049;
+    }
+}

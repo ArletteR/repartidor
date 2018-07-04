@@ -1,0 +1,70 @@
+page-inicio-sesion {
+    //MENSAJE DE ERROR ASOCIADO AL FORMULARIO
+    .mensajeError {
+        text-align: left;
+        font-size: 13px!important;
+        font-family: SourceSansPro-Regular !important;
+        color: #999999;
+    }
+    .formatoBoton {
+        font-family: Ubuntu !important;
+        color: #ffffff;
+        text-align: center;
+        font-size: 16px !important;
+        text-transform: none;
+        height: 48px;
+        width: 90%;
+    }
+    .item-ios.item-label-stacked .text-input,
+    .item-ios.item-label-floating .text-input {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        width: calc(100% - 8px);
+    }
+    /************************************************************************************/
+    //SE AGREGO PARA PROBAR SI SE CAMBIA EL BORDER DEL INPUT CUANDO HAY ERROR
+    .alertaError {
+        color: #ff7c24 !important;
+        font-size: 16px;
+        font-family: SourceSansPro-Regular;
+    }
+    .item-ios {
+        padding-left: 8px;
+        border-radius: 0;
+        position: relative;
+        font-size: 1.7rem;
+        color: #000;
+        background-color: #fff;
+        transition: background-color 200ms linear;
+    }
+    .item-ios.item-block .item-inner {
+        padding-right: 0px;
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+        border-bottom: 1px solid #dedede;
+        margin-left: 0px;
+    }
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner {
+        border-bottom-color: #b4d14b;
+        box-shadow: inset 0 -1px 0 0 #b4d14b;
+        font-size: 13px;
+    }
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+        border-bottom-color: #b4d14b;
+        box-shadow: inset 0 -1px 0 0 #b4d14b;
+        font-size: 13px;
+    }
+    .item-input-has-focus .label-md[stacked],
+    .input-has-focus .label-md[stacked],
+    .item-input-has-focus .label-md[floating],
+    .input-has-focus .label-md[floating] {
+        color: #b4d14b;
+        font-size: 16px;
+        font-family: SourceSansPro-Regular;
+        ;
+    }
+}

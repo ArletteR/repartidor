@@ -1,0 +1,8 @@
+{
+    "HOME": {
+        "GREETING": "Willkommen zu meiner {{value}} App!",
+        "TITLE": "Startseite {{value}}",
+        "INTRO": "<h2>Was für eine App!</h2>Du wirst sie lieben...",
+        "LNGBTN": "Sprache wechseln zu {{value}}"
+    } 
+}

@@ -1,0 +1,23 @@
+// SourceSansPro Font
+// Google
+// Apache License, version 2.0
+// http://www.apache.org/licenses/LICENSE-2.0.html
+
+$SourceSansPro-font-path: $font-path !default;
+
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  font-style: normal;
+  src: local("SourceSansPro-Regular"), 
+  local("SourceSansPro-Regular"), 
+  url("#{$SourceSansPro-font-path}/SourceSansPro-Regular.ttf") format("ttf"), 
+}
+
+@font-face {
+  font-family: "SourceSansPro-Bold";
+  font-style: normal;
+  src: local("SourceSansPro-Bold"), 
+  local("SourceSansPro-Regular"), 
+  url("#{$SourceSansPro-font-path}/SourceSansPro-Bold.ttf") format("ttf"), 
+}
+

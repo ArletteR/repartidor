@@ -1,0 +1,86 @@
+<div class="encabezadoSeccionEmbarques">
+
+    <ion-row>
+        <ion-col col-10>
+            <img src="assets/img/sambafresh_nuevologo.png" height="32px" style="margin-left:10px;" />
+        </ion-col>
+
+        <ion-col col-2>
+            <img src="assets/img/cerrarsesion.jpg" width="32px" height="32px" (click)="finalizarSesion()" />
+        </ion-col>
+    </ion-row>
+
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col col-50 embarquesEtiqueta">Embarques</div>
+        <div class="col col-50 misEmbarquesEtiqueta" (click)="irPagMisEmbarques()">Mis embarques</div>
+    </div>
+</div>
+
+<div class="fondoInterfaz">
+    <div *ngIf="existenEmbarques == false" style="text-align: center;width: 100%;height: 500px;">
+    </div>
+
+    <div *ngIf="embarquesObtenidos.length > 0 && existenEmbarques == true">
+
+        <div *ngFor="let embarques of embarquesObtenidos">
+
+
+            <br/>
+            <div class="fechaEmbarque">&nbsp;{{embarques.fechaHoraEntrega | localizedDate }}</div>
+            <br/>
+            <div class="fondoTarjeta">
+
+                <ion-row>
+                    <ion-col col-8>
+                        <div class=" numeroorden">#{{embarques.codigo }}</div>
+
+                        <div class="empresa">{{ embarques.empresa.nombre}}</div>
+
+                    </ion-col>
+                    <ion-col col-4>
+                        <img *ngIf="embarques.empresa.archivo_Foto != null" [src]="embarques.empresa.archivo_Foto | imagenes">
+                        <img *ngIf="embarques.empresa.archivo_Foto == null" src="assets/img/nofotoempresa.png">
+                    </ion-col>
+                </ion-row>
+
+                <div class="fondoTiempo">
+                    <span class="etiquetaOrden">Hora de salida :&nbsp; </span>
+                    <span class="dato_entrega_orden">{{embarques.horaSalida}} </span>
+                    <br/> <br/>
+                    <span class="etiquetaOrden">Hora entrega : &nbsp;</span>
+                    <span class="dato_entrega_orden"> {{embarques.horaEntrega }} </span>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class=" etiquetaOrden">Dirección : &nbsp;</div>
+                    <div class=" dato_entrega_orden"> {{ embarques.empresa.domicilio }}, CP. {{ embarques.empresa.cp }}, {{ embarques.empresa.ciudad }} </div>
+                </div>
+                <br/>
+
+                <ion-row>
+                    <ion-col col-4 (click)="irADetalle(embarques.id, embarques.codigo,  embarques.empresa.nombre,
+               embarques.empresa.domicilio, embarques.empresa.cp, embarques.empresa.ciudad,  embarques.horaEntrega, embarques.horaSalida, embarques.empresa.archivo_Foto )" class="etiqueta_vermas">
+                        Ver más </ion-col>
+                    <ion-col col-8>
+                        <div class="botonAceptar" (click)="confirmaAccion(embarques.id)">Aceptar</div>
+                    </ion-col>
+                </ion-row>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div *ngIf="embarquesObtenidos.length == 0 && existenEmbarques == true">
+        <br/>
+        <br/>
+        <div style="text-align:center">
+            <img src="assets/img/misembarques.png" />
+        </div>
+        <div class="noHayEmbarquesTexto">
+            Aún no hay embarques, cuando estén listos para entregarlos, podrás verlos aquí.
+        </div>
+    </div>
+</div>

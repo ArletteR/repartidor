@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="limon" style="box-shadow: 0px 4px 5px #bfbdbd99;">
+    <ion-title class="tituloSeccion">
+      <ion-icon name="arrow-back" (click)="cerrarModal()"></ion-icon> &nbsp;&nbsp; Detalles
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="10px">
+
+  <br/>
+
+  <ion-row>
+    <ion-col col-8>
+      <div class=" numeroorden">#{{codigo }}</div>
+      <div class="empresa">{{ nombre}}</div>
+    </ion-col>
+    <ion-col col-4>
+      <img [src]="archivo_foto|imagenes">
+    </ion-col>
+  </ion-row>
+
+  <br/>
+
+  <div class="row">
+    <div class="etiquetaOrden">Hora de salida :&nbsp; </div>
+    <div class="dato_entrega_orden">{{hora_salida}}</div>
+  </div>
+
+  <div class="row">
+    <div class="etiquetaOrden">Hora entrega : &nbsp;</div>
+    <div class="dato_entrega_orden"> {{hora_entrega}}</div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class=" etiquetaOrden">Dirección : &nbsp;</div>
+    <div class=" dato_entrega_orden"> {{ domicilio }}, CP. {{ codigoPostal }}, {{ ciudad }} </div>
+  </div>
+
+  <br/>
+
+  <hr>
+  <div class="row">
+    <div class="noProductosEmbarque">{{numprods}} Productos</div>
+  </div>
+
+  <div *ngFor="let item of ordenesEmbarque">
+    <ion-row>
+      <ion-col class="productosorden"> {{item.cantidad}} {{item.producto}} </ion-col>
+    </ion-row>
+  </div>
+
+
+</ion-content>

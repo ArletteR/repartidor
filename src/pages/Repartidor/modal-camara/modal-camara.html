@@ -1,0 +1,49 @@
+<ion-header class="encabezadoSeccion">
+
+  <ion-row no-padding no-margin class="encabezadoSeccion">
+    <ion-col col-2 (click)="closeModal()">
+      <img src="assets/img/cerrar.png" width="24px" height="24px" style="margin-left:10px;" />
+    </ion-col>
+    <ion-col col-8 class="tituloSeccion">
+      &nbsp;&nbsp;&nbsp;&nbsp;Tomar foto
+    </ion-col>
+    <ion-col col-2>
+      <img src="assets/img/guardar_ok.png" width="24px" height="24px" (click)="darPorTerminadoEmbarque()" />
+    </ion-col>
+  </ion-row>
+
+
+</ion-header>
+
+
+<ion-content class="fondo-foto">
+
+  <ion-item *ngIf="error" class="fondo-foto">
+    <strong>{{error}}</strong>
+  </ion-item>
+  <ion-item class="fondo-foto">
+    <img *ngIf="myPhoto" class="img-responsive" [src]="myPhoto" />
+  </ion-item>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <img src="assets/img/tomafoto.jpg" *ngIf="nofoto==false" />
+
+</ion-content>
+
+<ion-footer class="fondo-footer">
+<div *ngIf="myPhoto">Una vez que se notifica la entrega del embarque este ya no estará disponible en su lista de embarques</div>
+  <ion-row no-padding no-margin>
+    <ion-col col-4 no-padding class="formatoEtiquetasBoton5" (click)="closeModal()">
+      Cancelar
+    </ion-col>
+    <ion-col col-7 no-padding class="formatoEtiquetasBoton4" (click)="darPorTerminadoEmbarque()">
+     Notificar entrega
+    </ion-col>
+  </ion-row>
+
+
+
+</ion-footer>

@@ -1,0 +1,88 @@
+<ion-content>
+
+  <div style="padding: 10px">
+    <span class="elefante">¿Vas tarde? </span>&nbsp;
+    <span class="reporta">Reporta el tiempo de demora</span>
+  </div>
+  <div id="minutos_retraso">{{minutosRetraso}} Minutos</div>
+  <div class="analog-clock">
+    <svg width="280" height="280">
+      <circle class="circulo_gris" cx="140" cy="140" r="140" />
+      <circle class="circulo_fondo" cx="140" cy="140" r="5" />
+      <g *ngIf="minutos[0]">
+        <line class="linea_minutos" x1="140" y1="140" x2="140" y2="30" />
+        <circle class="circulo_fondo" cx="140" cy="20" r="15" />
+      </g>
+      <g *ngIf="minutos[1]">
+        <line class="linea_minutos" x1="140" y1="140" x2="191" y2="45" />
+        <circle class="circulo_fondo" cx="195" cy="40" r="15" />
+      </g>
+      <g *ngIf="minutos[2]">
+        <line class="linea_minutos" x1="140" y1="140" x2="234" y2="85" />
+        <circle class="circulo_fondo" cx="242" cy="80" r="15" />
+      </g>
+      <g *ngIf="minutos[3]">
+        <line class="linea_minutos" x1="140" y1="140" x2="245" y2="145" />
+        <circle class="circulo_fondo" cx="255" cy="145" r="15" />
+      </g>
+      <g *ngIf="minutos[4]">
+        <line class="linea_minutos" x1="140" y1="140" x2="239" y2="205" />
+        <circle class="circulo_fondo" cx="239" cy="205" r="15" />
+      </g>
+      <g *ngIf="minutos[5]">
+        <line class="linea_minutos" x1="140" y1="140" x2="200" y2="235" />
+        <circle class="circulo_fondo" cx="200" cy="235" r="15" />
+      </g>
+      <g *ngIf="minutos[6]">
+        <line class="linea_minutos" x1="140" y1="140" x2="140" y2="255" />
+        <circle class="circulo_fondo" cx="140" cy="260" r="15" />
+      </g>
+      <g *ngIf="minutos[7]">
+        <line class="linea_minutos" x1="140" y1="140" x2="80" y2="235" />
+        <circle class="circulo_fondo" cx="80" cy="235" r="15" />
+      </g>
+      <g *ngIf="minutos[8]">
+        <line class="linea_minutos" x1="140" y1="140" x2="40" y2="205" />
+        <circle class="circulo_fondo" cx="40" cy="205" r="15" />
+      </g>
+      <g *ngIf="minutos[9]">
+        <line class="linea_minutos" x1="140" y1="140" x2="20" y2="145" />
+        <circle class="circulo_fondo" cx="20" cy="145" r="15" />
+      </g>
+      <g *ngIf="minutos[10]">
+        <line class="linea_minutos" x1="140" y1="140" x2="40" y2="80" />
+        <circle class="circulo_fondo" cx="40" cy="80" r="15" />
+      </g>
+      <g *ngIf="minutos[11]">
+        <line class="linea_minutos" x1="140" y1="140" x2="78" y2="40" />
+        <circle class="circulo_fondo" cx="78" cy="40" r="15" />
+      </g>
+
+      <text x="131" y="25" [ngClass]="{'texto_blanco': minutos[0] }" (click)="minutosActuales(0)">00</text>
+      <text x="191" y="45" [ngClass]="{'texto_blanco': minutos[1] }" (click)="minutosActuales(1)">5</text>
+      <text x="232" y="85" [ngClass]="{'texto_blanco': minutos[2] }" (click)="minutosActuales(2)">10</text>
+      <text x="245" y="150" [ngClass]="{'texto_blanco': minutos[3] }" (click)="minutosActuales(3)">15</text>
+      <text x="230" y="210" [ngClass]="{'texto_blanco': minutos[4] }" (click)="minutosActuales(4)">20</text>
+      <text x="191" y="240" [ngClass]="{'texto_blanco': minutos[5] }" (click)="minutosActuales(5)">25</text>
+      <text x="130" y="266" [ngClass]="{'texto_blanco': minutos[6] }" (click)="minutosActuales(6)">30</text>
+      <text x="70" y="240" [ngClass]="{'texto_blanco': minutos[7] }" (click)="minutosActuales(7)">35</text>
+      <text x="30" y="210" [ngClass]="{'texto_blanco': minutos[8] }" (click)="minutosActuales(8)">40</text>
+      <text x="10" y="150" [ngClass]="{'texto_blanco': minutos[9] }" (click)="minutosActuales(9)">45</text>
+      <text x="30" y="85" [ngClass]="{'texto_blanco': minutos[10] }" (click)="minutosActuales(10)">50</text>
+      <text x="68" y="45" [ngClass]="{'texto_blanco': minutos[11] }" (click)="minutosActuales(11)">55</text>
+    </svg>
+  </div>
+</ion-content>
+
+<ion-footer>
+
+  <ion-row no-padding no-margin>
+    <ion-col col-6 no-padding class="formatoEtiquetasBoton5" (click)="closeModal()">
+      Cancelar
+    </ion-col>
+    <ion-col col-5 no-padding class="formatoEtiquetasBoton4" (click)="enviaRetraso()">
+      Enviar retraso
+    </ion-col>
+  </ion-row>
+
+</ion-footer>

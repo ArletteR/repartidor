@@ -1,0 +1,101 @@
+<div class="encabezadoSeccionEmbarques">
+
+    <ion-row>
+        <ion-col col-10>
+            <img src="assets/img/sambafresh_nuevologo.png" height="32px" style="margin-left:10px;" />
+        </ion-col>
+
+        <ion-col col-2>
+            <img src="assets/img/cerrarsesion.jpg" width="32px" height="32px" (click)="finalizarSesion()" />
+        </ion-col>
+    </ion-row>
+
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col col-50 embarquesEtiqueta" (click)="irPagEmbarques()">Embarques</div>
+        <div class="col col-50 misEmbarquesEtiqueta">Mis embarques</div>
+    </div>
+</div>
+
+<div class="fondoInterfaz">
+    <div *ngIf="existenEmbarques == false" style="text-align: center;width: 100%;height: 500px;">
+
+    </div>
+    <div *ngIf="embarquesObtenidos.length > 0 && existenEmbarques == true">
+
+        <div *ngFor="let embarques of embarquesObtenidos">
+
+            <br/>
+            <div class="fechaEmbarque">&nbsp;{{embarques.fechaHoraEntrega | localizedDate }}</div>
+            <br/>
+            <div class="fondoTarjeta">
+
+                <ion-row>
+                    <ion-col col-8>
+                        <div class=" numeroorden">#{{embarques.codigo }}</div>
+                        <div class="empresa">{{ embarques.empresa.nombre}}</div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <img *ngIf="embarques.empresa.archivo_Foto != null" [src]="embarques.empresa.archivo_Foto | imagenes">
+                        <img *ngIf="embarques.empresa.archivo_Foto == null" src="assets/img/nofotoempresa.png">
+                    </ion-col>
+                </ion-row>
+
+                <div class="fondoTiempo">
+                    <span class="dato_entrega_orden"> Hora de salida :&nbsp; </span>
+                    <span class="etiquetaOrden">{{embarques.horaSalida}} </span>
+
+                    <br/>
+                    <span class="dato_entrega_orden">Hora entrega : &nbsp;</span>
+                    <span class="etiquetaOrden"> {{embarques.horaEntrega }} </span>
+
+                </div>
+                <br/>
+                <div class="row">
+                    <div class=" dato_entrega_orden">Dirección : &nbsp;</div>
+                    <div class=" etiquetaOrden"> {{ embarques.empresa.domicilio }}, CP. {{ embarques.empresa.cp }}, {{ embarques.empresa.ciudad }} </div>
+                </div>
+                <br/>
+
+
+                <ion-row>
+                    <ion-col col-2>
+                        <img *ngIf="embarques.demora == 0" src="assets/img/trash.jpg" width="24px" height="32px" style="margin-left:10px;" (click)="confirmaAccion(embarques.id)" />
+                        <img *ngIf="embarques.demora > 0" src="assets/img/trash.jpg" width="24px" height="32px" style="margin-left:10px;" (click)="soloAvisaNoRegreso()" />
+                    </ion-col>
+                    <ion-col col-2 style="texy-align: center">
+                        <img *ngIf="embarques.demora == 0" src="assets/img/reloj.jpg" width="24px" height="24px" style="text-align:center; margin-top:7px;" (click)="notificarRetraso(embarques.id)" />
+                        <img *ngIf="embarques.demora > 0" src="assets/img/reloj_naranja.jpg" width="24px" height="24px" style="text-align:center; margin-top:7px;" (click)="notificarRetraso(embarques.id)" />
+                    </ion-col>
+                    <ion-col col-4 class="mensajeatraso">
+
+                        <span *ngIf="embarques.demora > 0"> + {{embarques.demora}} min </span>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="botonFinalizar" (click)="finalizarEmbarque(embarques.id)">Finalizar</div>
+                    </ion-col>
+                </ion-row>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div *ngIf="embarquesObtenidos.length == 0 && existenEmbarques == true">
+        <br/>
+        <br/>
+        <br/>
+
+        <div style="text-align:center">
+            <img src="assets/img/aceptadono.png" />
+        </div>
+        <div class="noHayEmbarquesTexto">
+            Aún no haz aceptado embarques.
+        </div>
+    </div>
+
+
+</div>

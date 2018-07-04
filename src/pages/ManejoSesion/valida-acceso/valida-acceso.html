@@ -1,0 +1,51 @@
+<ion-content class="login-background">
+    <div class="content_logo">
+
+    </div>
+    <div class="content_main">
+        <img class="logo" src="assets/img/logo.png" width="70%" />
+        <ion-row style="display: table;text-align: center;width: 100%;margin-top: 10%;margin-bottom: 20%;">
+            <ion-col [navPush]="goBack" class="texto_derecha">
+                <img src="assets/img/dropdown.png" width="10px" />
+            </ion-col>
+            <ion-col class="texto_izquierda">
+                <div class="titulo">Iniciar sesión</div>
+                <div class="subtitulo">como {{nombreUsuario}}</div>
+            </ion-col>
+        </ion-row>
+        <br/><br/>
+        <form [formGroup]="user" (ngSubmit)="goToEmbarques(user)">
+
+            <ion-item align-items-center style="width: 100%;padding: 8px;position: relative;z-index: 0;">
+                <ion-label [class.alertaError_1]="isInvalidControl('password') || errorObtenido == 1 || errorObtenido == 0" floating>Contraseña</ion-label>
+                <ion-input type="{{type}}" formControlName="password" [class.invalid]="isInvalidControl('password') || errorObtenido == 0" required [style.padding-left.px]="!isInvalidControl('password') && errorObtenido == -1 || errorObtenido == 1  ? '0' : '30'"></ion-input>
+                <ion-icon style="color:#ff7c24;" name="ios-alert-outline" *ngIf="errorObtenido == 0" item-left></ion-icon>
+                <ion-icon style="color:#ff7c24;" name="ios-alert-outline" *ngIf="isInvalidControl('password')" item-left></ion-icon>
+            </ion-item>
+            <div *ngIf="!showPass" class="pull-left show-pass icon-ojo" (click)="showPassword()">
+                <img class="logo" src="assets/img/ojo_cerrado.png" width="24px" height="15px" />
+            </div>
+            <div *ngIf="showPass" class="pull-left show-pass icon-ojo" (click)="showPassword()">
+                <img class="logo" src="assets/img/ojo_abierto.png" width="24px" height="15px" />
+            </div>
+
+            <ion-item *ngIf="isInvalidControl('password')" no-lines>
+                <span class="mensajeError">Ingrese una clave de acceso válida</span>
+            </ion-item>
+            <ion-item *ngIf="errorObtenido == 1" no-lines style="text-align: center">
+                <span class="alertaError">Tu cuenta no ha sido validada. Revisa tu<br/>correo eléctronico</span>
+            </ion-item>
+            <ion-item *ngIf="errorObtenido == 0" no-lines>
+                <span class="mensajeError">Contraseña incorrecta</span>
+            </ion-item>
+            <ion-row style="text-align:center; margin-top: 11%">
+                <ion-col>
+                    <button ion-button type="submit" [disabled]="user.invalid" color="limon" class="formatoBoton" round>Iniciar sesión</button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </div>
+    <ion-row class="content_fo">
+        <ion-col (click)="irARecuperaPassword()" class="formatoEtiquetasBoton3">¿Olvidaste tu contraseña?</ion-col>
+    </ion-row>
+</ion-content>

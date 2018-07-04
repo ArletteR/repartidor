@@ -1,0 +1,39 @@
+<ion-header>
+
+    <ion-navbar color="limon" style="box-shadow: 0px 4px 5px #bfbdbd99;">
+        <ion-title class="titulo" style="width: 100%;padding: 0;text-align: left;">
+            <ion-icon name="ios-arrow-back-outline" (click)="cerrarModal()" item-left></ion-icon>
+            &nbsp;&nbsp;&nbsp;&nbsp;Recuperar contraseña
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div class="marginTop"></div>
+    <img class="imagen" src="assets/img/olvide_contrasena.png" width="56px" height="68px" />
+
+    <br/>
+    <br/>
+    <div class="mensajeCorreo">
+        ¿Deseas que te enviemos un correo electronico a <br/> {{correoUsuario}}?
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <ion-row style="text-align:center;">
+        <ion-col>
+            <button ion-button type="button" color="limon" class="formatoBoton" (click)="enviaCorreo()" round>Enviar</button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row style="text-align:center;">
+        <ion-col>
+            <button ion-button type="button" color="limon" class="formatoBoton2" (click)="cerrarModal()" style="background-color: transparent;border: 2px solid #b4d049;" round>
+		<span style="color: #b4d049;">Cancelar</span>
+	</button>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

@@ -38,7 +38,16 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  gris :      #808080 ,
+  blanco   :  #FFFFFF   ,
+  energy:     #f2b632,
+  limon  :    #B4D14B ,
+  pasto  :    #76BD1D ,
+  tigre :     #FF7C24,
+  aceituna :  #E0D734,
+    otroFondo : #fbfcfc,
+  lineas: #e6e6e6
 );
 
 
@@ -86,3 +95,40 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+//PROPIAS DE LA APLICACION
+
+@font-face {
+ font-family: 'Ubuntu';
+ src:url('../assets/fonts/Ubuntu-R.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: 'Ubuntu-Medium';
+ src:url('../assets/fonts/Ubuntu-M.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: 'Ubuntu-Regular';
+ src:url('../assets/fonts/Ubuntu-R.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src:url('../assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+ }
+
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src:url('../assets/fonts/SourceSansPro-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+ }
